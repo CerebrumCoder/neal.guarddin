@@ -60,31 +60,46 @@ img {
 }
 
 .univ-indo {
-
+  color: #ca8a04;
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 
-.cs {
-  transform-origin: bottom right;
-  transition: 0.4s ease-out;
+.univ-indo:hover {
+  color: #8f6304;
+  text-decoration: none;
 }
 
 .cs-1 {
   color: #0706f5;
-  
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 
 .cs-2 {
   color: #f60607;
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
 }
+
+.school {
+  color: #0706f5;
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.school:hover {
+  color: #0505a6;
+}
+
+
 
 .cs:hover .cs-1 {
   color: #0505a6;
-  transition: transform 0.4s ease-in-out;
 }
 
 .cs:hover .cs-2 {
   color: #a30606;
-  transition: transform 0.4s ease-in-out;
 }
 
 .navbar-nav .nav-link.active,
@@ -168,6 +183,51 @@ section {
   overflow: hidden;
 }
 
+.fade-down-in {
+  opacity: 0;
+  transform: translateY(-50px);
+  /* Start above the initial position */
+  animation: fadeUpIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeUpIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+    /* Start above the initial position */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    /* End at the original position, fully visible */
+  }
+}
+
+.fade-down-in-on-scroll {
+  opacity: 0;
+  transform: translateY(-50px);
+  /* Start above the initial position */
+  transition: all 1s ease-in-out;
+}
+
+.fade-down-in-on-scroll.animate {
+  opacity: 1;
+  transform: translateY(0);
+  /* End at the original position */
+}
+
+.card {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.card.pop-up {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .header-text {
   position: relative;
   display: inline-block;
@@ -178,11 +238,12 @@ section {
   background-color: transparent;
   border: 2px dashed #000;
   border-radius: 10px;
-  text-transform: uppercase;  
+  text-transform: uppercase;
   overflow: hidden;
   transition: color 0.4s ease;
   z-index: 1;
 }
+
 section .overlay {
   position: absolute;
   top: 0;
@@ -198,7 +259,7 @@ section .overlay {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   /* padding: 20px; */
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -229,7 +290,7 @@ section .overlay {
   text-transform: uppercase;
   text-decoration: none;
   overflow: hidden;
-  transition: color 0.4s ease;  
+  transition: color 0.4s ease;
   z-index: 1;
 }
 
@@ -256,7 +317,8 @@ section .overlay {
 }
 
 .view-resume-button::before {
-  transition: transform 0.4s ease, opacity 0.4s ease;;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  ;
 }
 
 .view-resume-button:not(:hover)::before {
@@ -265,7 +327,12 @@ section .overlay {
 
 @media (max-width: 991px) {
   .mt-responsive {
-      margin-top: 2rem!important;
+    margin-top: 2rem !important;
+  }
+
+  .center-img {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -409,14 +476,4 @@ section .hero-video {
   /* position: fixed; */
   max-height: 602px;
   object-fit: cover;
-}
-
-/* Footer */
-.footer-link {
-  color: rgba(0, 0, 0, 1);
-  transition: 0.3s;
-}
-
-.footer-link:hover {
-  color: rgba(0, 0, 0, 0.8);
 }

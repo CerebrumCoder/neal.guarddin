@@ -6,6 +6,31 @@ $(document).ready(function () {
     $(this).addClass("active");
   });
 
+  // Animasi Fade down
+  $(window).scroll(function () {
+    const element = document.querySelector('.fade-down-in-on-scroll');
+    const elementPosition = element.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+
+    if (elementPosition < screenPosition) {
+      element.classList.add('animate');
+    }
+  });
+
+  // Animasi card
+  $(window).scroll(function () {
+    const cards = document.querySelectorAll('.card');
+    const screenPosition = window.innerHeight / 1.3;
+
+    cards.forEach(card => {
+      const cardPosition = card.getBoundingClientRect().top;
+
+      if (cardPosition < screenPosition) {
+        card.classList.add('pop-up');
+      }
+    });
+  });
+
   // fungsi tentang turn on bg di navbar dan adanya tombol back-to-top
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
