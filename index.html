@@ -74,7 +74,7 @@
       <div id="homeBlock" class="a-init rounded-[32px] border border-white/10 bg-white/10 p-8 sm:p-10 backdrop-blur-xl shadow-glass">
         <h1 id="headline" class="a-init text-center text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
           Hi, I'm Neal Guarddin <br>
-          You can call me <span id="tw-name"></span><span id="tw-caret" class="tw-caret">|</span>
+          <span id="tw-name"></span><span id="tw-caret" class="tw-caret">|</span>
         </h1>
 
         <p class="a-init a-d1 mt-4 text-center text-white/85">
@@ -131,7 +131,7 @@
               <li>• Could speak 3 languages: Bahasa Indonesia, English, and Deutsch</li>
             </ul>
             <p class="mt-4 text-white/85 leading-relaxed">
-              Craving more details? Find them below!
+              Craving more details? Find them below! See my <a href="https://www.linkedin.com/in/neal-guarddin" target="_blank" rel="noopener" class="underline decoration-[var(--emerald)] decoration-2 underline-offset-4 hover:decoration-4 transition">Linkedin</a> for more detail Portofolio
             </p>
             <div class="mt-6 flex gap-3">
               <a href="https://github.com/CerebrumCoder" target="_blank" class="group inline-flex h-11 w-11 items-center justify-center rounded-full ring-1 ring-white/20 bg-white/5 hover:bg-white/10">
@@ -236,9 +236,12 @@
         headline.classList.remove('a-init');
         headline.classList.add('a-rise');
 
-        if (reduce) { nameSpan.textContent = 'Neal'; return; }
+        if (reduce) { 
+          nameSpan.textContent = 'Student'; 
+          return; 
+        }
 
-        const words  = ['Neal','Neil'];  // ubah sesukamu, mis: ['Neal Guarddin']
+        const words  = ["Student", 'Research Assistant', 'Developer'];  // ubah sesukamu, mis: ['Neal Guarddin']
         const typeMs = 110, eraseMs = 60, holdMs = 1200;
         let wi = 0, ci = 0, dir = 1;
 
